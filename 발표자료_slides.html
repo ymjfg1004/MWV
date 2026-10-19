@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  @page{ size:A4 landscape; margin:0; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#1b2130;--muted:#5b6474;--line:#e3e7ee;--p:#4f46e5;--s:#f59e0b;--bg:#ffffff;--soft:#f5f7fb}
+  html,body{font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .slide{width:297mm;height:209mm;padding:18mm 20mm;position:relative;overflow:hidden;page-break-after:always;background:var(--bg)}
+  .slide:last-child{page-break-after:auto}
+  .eyebrow{font-size:11pt;font-weight:800;letter-spacing:.14em;color:var(--p);text-transform:uppercase}
+  h1{font-size:40pt;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-top:6mm}
+  h2{font-size:24pt;font-weight:800;letter-spacing:-.02em;margin-bottom:7mm}
+  .sub{font-size:14pt;color:var(--muted);margin-top:5mm;line-height:1.5;max-width:200mm}
+  .foot{position:absolute;left:20mm;right:20mm;bottom:12mm;display:flex;justify-content:space-between;align-items:center;font-size:10.5pt;color:var(--muted);border-top:1px solid var(--line);padding-top:4mm}
+  .chips{display:flex;gap:4mm;margin-top:10mm}
+  .chip{font-size:11pt;font-weight:700;padding:3mm 6mm;border-radius:999px;border:1.5px solid var(--line)}
+  .chip.p{background:var(--p);color:#fff;border-color:var(--p)}
+  .chip.s{background:var(--s);color:#fff;border-color:var(--s)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:7mm;margin-top:3mm}
+  .card{border:1px solid var(--line);border-radius:5mm;padding:7mm 8mm;background:var(--soft)}
+  .card h3{font-size:13.5pt;font-weight:800;margin-bottom:3mm;display:flex;align-items:center;gap:3mm}
+  .card h3 .d{width:4mm;height:4mm;border-radius:50%;background:var(--p)}
+  .card.s h3 .d{background:var(--s)}
+  .card ul{margin-left:5mm;color:var(--muted);font-size:11.5pt;line-height:1.7}
+  .lead{font-size:13pt;color:var(--muted);line-height:1.6;margin-bottom:6mm;max-width:235mm}
+  .stack{display:flex;flex-direction:column;gap:3mm;margin-top:2mm}
+  .row{display:flex;gap:4mm;align-items:flex-start;font-size:12pt;line-height:1.5}
+  .row b{color:var(--ink)}
+  .num{flex:0 0 7mm;height:7mm;border-radius:50%;background:var(--p);color:#fff;font-size:10pt;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:.5mm}
+  .tags{display:flex;flex-wrap:wrap;gap:3mm;margin-top:4mm}
+  .tag{font-size:10.5pt;font-weight:700;padding:2mm 4mm;border-radius:3mm;background:#eef1f8;color:var(--ink)}
+  .mock{position:absolute;right:20mm;top:30mm;width:58mm;height:118mm;border:3px solid #141824;border-radius:9mm;padding:4mm;background:#fff;box-shadow:0 10mm 20mm -8mm rgba(20,24,36,.4)}
+  .mock .bar{height:4mm;display:flex;justify-content:space-between;align-items:center;font-size:7pt;font-weight:700;padding:0 2mm}
+  .mock .t{height:7mm;border-radius:2mm;background:#e7eaf0;margin:3mm 0}
+  .mock .btn{height:9mm;border-radius:2.5mm;background:var(--p);margin-top:3mm}
+  .mock .b2{height:9mm;border-radius:2.5mm;background:var(--s);margin-top:3mm;width:55%}
+  .mock .im{height:30mm;border-radius:3mm;background:#eef1f6;margin:3mm 0}
+</style>
+</head>
+<body>
+
+  <section class="slide">
+    <div class="eyebrow">Mobile Wireframe · Color Concept</div>
+    <h1>MWV<br>모바일 와이어프레임 &amp;<br>컨셉 컬러 프리뷰어</h1>
+    <div class="sub">블럭으로 모바일 화면을 만들고, 두 가지 컬러(Primary · Secondary)를 입혀<br>서비스의 컨셉 컬러를 즉시 확인하는 웹 도구.</div>
+    <div class="chips"><span class="chip p">Primary</span><span class="chip s">Secondary</span><span class="chip">Wireframe ON/OFF</span></div>
+    <div class="mock">
+      <div class="bar"><span>9:41</span><span>▯▯▮</span></div>
+      <div class="t" style="width:70%"></div>
+      <div class="im"></div>
+      <div class="t" style="width:90%"></div>
+      <div class="t" style="width:60%"></div>
+      <div class="btn"></div>
+      <div class="b2"></div>
+    </div>
+    <div class="foot"><span>20271019 AI 수업 · 발표자료</span><span>github.com/ymjfg1004/MWV</span></div>
+  </section>
+
+  <section class="slide">
+    <h2>무엇을 / 왜 만들었나</h2>
+    <div class="lead">와이어프레임 단계에서 색을 적용해 보려면 디자인 툴에서 매번 수작업이 필요하다.<br>MWV는 <b>블럭 배치 → 2색 지정 → 즉시 반영</b>으로 컨셉 컬러를 수 초 안에 검증한다.</div>
+    <div class="grid">
+      <div class="card"><h3><span class="d"></span>핵심 가치</h3>
+        <ul>
+          <li>그레이 와이어프레임 ↔ 컬러 적용을 토글로 즉시 비교</li>
+          <li>Primary / Secondary 2색만으로 컨셉 전달</li>
+          <li>비전문가도 블럭을 끌어다 화면 구성 가능</li>
+        </ul>
+      </div>
+      <div class="card s"><h3><span class="d"></span>대상 사용자</h3>
+        <ul>
+          <li>직접 만드는 사람 — 빈 캔버스에 블럭 배치</li>
+          <li>빠르게 시작하는 사람 — 템플릿 선택 후 색만 조정</li>
+          <li>색 조합안을 여러 개 저장·비교하려는 사람</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tags"><span class="tag">클릭 몇 번</span><span class="tag">수 초 내 반영</span><span class="tag">저장·비교</span></div>
+    <div class="foot"><span>MWV — PRD 요약</span><span>2 / 3</span></div>
+  </section>
+
+  <section class="slide">
+    <h2>주요 기능 &amp; 기술</h2>
+    <div class="stack">
+      <div class="row"><span class="num">1</span><span><b>블럭 에디터</b> — 제목·텍스트·버튼·이미지·박스·아바타·뱃지·구분선을 클릭/드래그앤드롭으로 배치, 핸들 리사이즈, 옆·아래 자유 배치, 넘치면 가로·세로 스크롤</span></div>
+      <div class="row"><span class="num">2</span><span><b>속성 조절</b> — 선택 블럭의 텍스트·폰트 크기·너비/높이·색 역할(기본/Primary/Secondary)</span></div>
+      <div class="row"><span class="num">3</span><span><b>컬러 시스템</b> — HEX·컬러피커로 2색 지정, ON/OFF 토글, 버튼 글자색 자동 대비</span></div>
+      <div class="row"><span class="num">4</span><span><b>캔버스</b> — 배경색 지정, 상단바 iOS / Android 전환</span></div>
+      <div class="row"><span class="num">5</span><span><b>템플릿 &amp; 저장</b> — 대시보드·피드·상세·갤러리·로그인 템플릿 로드, 디자인을 리스트로 저장·불러오기</span></div>
+    </div>
+    <div class="grid" style="margin-top:8mm">
+      <div class="card"><h3><span class="d"></span>기술 스택</h3>
+        <ul><li>순수 HTML / CSS / Vanilla JS (빌드 없음)</li><li>상태 저장: 브라우저 localStorage</li></ul>
+      </div>
+      <div class="card s"><h3><span class="d"></span>배포</h3>
+        <ul><li>GitHub: ymjfg1004/MWV</li><li>Vercel 정적 호스팅 (index.html 단일 엔트리)</li></ul>
+      </div>
+    </div>
+    <div class="foot"><span>MWV — 기능 &amp; 아키텍처</span><span>3 / 3</span></div>
+  </section>
+
+</body>
+</html>
